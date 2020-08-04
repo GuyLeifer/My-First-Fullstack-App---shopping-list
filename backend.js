@@ -57,24 +57,19 @@ app.post("/products", (req, res) => {
 });
 
 app.delete('/products/:id', (req, res) =>{
-    // for (let i = 0; i <= products.length; i++) {
-    //     if (i === products.length) {
-    //         res.send("Massage: Product Not Found");
-    //     }
-    //     if (products[i].id == req.params.id){
-    //         console.log(true);
-    //         products.splice(index, 1);
-    //         res.send("The product with the ID of - " + req.params.id + " - has been deleted");
-    //         break;
-    //     }
-    // }
-
+    let maybe = false;
     products.forEach((product, index) =>{
+        
         if(product.id == req.params.id){
+            maybe = true;
             products.splice(index, 1);
-            res.send("The product with the ID of - " + req.params.id + " - has been deleted");
-        }
+            res.send(products);
+            // res.send("The product with the ID of - " + req.params.id + " - has been deleted");
+        }    
     });
+    if (maybe === false) {
+        res.send("The product with the ID of - " + req.params.id + " - has been deleted");
+    }  
 });
 
 app.put('/products/:id', (req, res) =>{
