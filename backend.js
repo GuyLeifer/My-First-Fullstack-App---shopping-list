@@ -13,10 +13,22 @@ const products = [
         name: "egg",
         price: 10
     }
+    ,
+    {
+        id: 3,
+        name: "bread",
+        price: 5
+    }
 ];
 
 
 app.use(express.json());
+app.use(logger);
+
+function logger (req, res, next) {
+    console.log('request fired ' + req.url + ' ' + req.method + ' ' + req.data);
+    next();
+}
 
 app.get("/", (req, res) =>{
 
@@ -39,6 +51,11 @@ app.get("/products/:id", (req, res) => {
             break;
     }   
 }});
+
+app.post("/post", (req, res) => {
+    products.push(req.body);
+    res.send(req.body);
+});
 
 
 
