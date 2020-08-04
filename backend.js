@@ -52,11 +52,19 @@ app.get("/products/:id", (req, res) => {
     }   
 }});
 
-app.post("/post", (req, res) => {
+app.post("/product", (req, res) => {
     products.push(req.body);
     res.send(req.body);
 });
 
+app.delete('/product/:id', (req, res) =>{
+    products.forEach((product, index) =>{
+        if(product.id == req.params.id){
+            products.splice(index, 1);
+            res.send("The product with the ID of - " + req.params.id + " - deleted");
+        }
+    });
+});
 
 
 app.listen(3000);
