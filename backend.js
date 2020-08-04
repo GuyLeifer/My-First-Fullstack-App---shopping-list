@@ -44,7 +44,6 @@ app.get("/products/:id", (req, res) => {
     for (let i = 0; i <= products.length; i++ ) {
         if (i === products.length) {
             res.send("Massage: Product Not Found");
-            break;
         }
         if (products[i].id == id) {
             res.send(products[i]);
@@ -52,16 +51,37 @@ app.get("/products/:id", (req, res) => {
     }   
 }});
 
-app.post("/product", (req, res) => {
+app.post("/products", (req, res) => {
     products.push(req.body);
     res.send(req.body);
 });
 
-app.delete('/product/:id', (req, res) =>{
+app.delete('/products/:id', (req, res) =>{
+    // for (let i = 0; i <= products.length; i++) {
+    //     if (i === products.length) {
+    //         res.send("Massage: Product Not Found");
+    //     }
+    //     if (products[i].id == req.params.id){
+    //         console.log(true);
+    //         products.splice(index, 1);
+    //         res.send("The product with the ID of - " + req.params.id + " - has been deleted");
+    //         break;
+    //     }
+    // }
+
     products.forEach((product, index) =>{
         if(product.id == req.params.id){
             products.splice(index, 1);
-            res.send("The product with the ID of - " + req.params.id + " - deleted");
+            res.send("The product with the ID of - " + req.params.id + " - has been deleted");
+        }
+    });
+});
+
+app.put('/products/:id', (req, res) =>{
+    products.forEach((product, index) =>{
+        if(product.id == req.params.id){
+            products[index] = req.body;
+            res.send(req.body);
         }
     });
 });
