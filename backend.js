@@ -16,7 +16,7 @@ function logger (req, res, next) {
 
 app.get("/", (req, res) =>{
 
-    res.send("hello");
+    res.send(["hello"]);
 });
 
 app.get("/products/", (req, res) => {
