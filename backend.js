@@ -2,23 +2,7 @@ const express = require("express");
 const app = express();
 
 const products = [
-    {
-        id: 1,
-        name: "milk",
-        price: 20
-    }
-    ,
-    {
-        id: 2,
-        name: "egg",
-        price: 10
-    }
-    ,
-    {
-        id: 3,
-        name: "bread",
-        price: 5
-    }
+
 ];
 
 
