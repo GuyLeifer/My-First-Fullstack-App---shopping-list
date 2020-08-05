@@ -7,6 +7,10 @@ body, div, span, input, button, h1, h2, h3, h4{
     margin: auto;
     max-width: 900px;
     border: solid black;
+    
+}
+#main div{
+    padding: 10px;
 }
 #main #title{
     text-align: center;
@@ -30,6 +34,8 @@ body, div, span, input, button, h1, h2, h3, h4{
 #main .product{
     display: grid;
     grid-template-columns: 10% auto 10%;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 #main .product .id, #main .product .price{
     text-align: center;
