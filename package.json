@@ -1,0 +1,23 @@
+{
+  "name": "My-First-Fullstack-App---shopping-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuyLeifer/My-First-Fullstack-App---shopping-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GuyLeifer/My-First-Fullstack-App---shopping-list/issues"
+  },
+  "homepage": "https://github.com/GuyLeifer/My-First-Fullstack-App---shopping-list#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
