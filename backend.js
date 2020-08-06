@@ -2,23 +2,7 @@ const express = require("express");
 const app = express();
 
 const products = [
-    {
-        id: 1,
-        name: "milk",
-        price: 20
-    }
-    ,
-    {
-        id: 2,
-        name: "egg",
-        price: 10
-    }
-    ,
-    {
-        id: 3,
-        name: "bread",
-        price: 5
-    }
+
 ];
 
 
@@ -32,7 +16,7 @@ function logger (req, res, next) {
 
 app.get("/", (req, res) =>{
 
-    res.send("hello");
+    res.send(["hello"]);
 });
 
 app.get("/products/", (req, res) => {
